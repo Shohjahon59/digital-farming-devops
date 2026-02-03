@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: agriculture-app-monitor
+  labels:
+    release: loki-stack  # Prometheus o'rnatilgan reliz nomi bilan bir xil bo'lishi kerak
+spec:
+  selector:
+    matchLabels:
+      app: agriculture-app
+  endpoints:
+  - port: http
+    path: /metrics
+    interval: 15s

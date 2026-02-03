@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: agriculture-app-service
+  labels:
+    app: agriculture-app
+spec:
+  selector:
+    app: agriculture-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: ClusterIP

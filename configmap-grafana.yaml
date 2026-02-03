@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: agri-dashboard-config
+  labels:
+    grafana_dashboard: "1"
+data:
+  agri-dashboard.json: |
+    {
+      "title": "Agricultural Platform - Executive View",
+      "panels": [ ... ] # Yuqorida men bergan JSON kodini shu yerga joylang
+    }

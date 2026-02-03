@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agriculture-app
+  labels:
+    app: agriculture-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: agriculture-app
+  template:
+    metadata:
+      labels:
+        app: agriculture-app
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "5000"
+    spec:
+      containers:
+      - name: agriculture-app
+        image: abuseven/agriculture-app:latest
+        ports:
+        - containerPort: 5000

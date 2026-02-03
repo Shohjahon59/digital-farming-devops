@@ -1,0 +1,13 @@
+replicaCount: 2
+
+image:
+  repository: your-dockerhub-username/agriculture-app
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 5000
+
+metrics:
+  port: 8000
