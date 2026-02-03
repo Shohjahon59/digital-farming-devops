@@ -19,4 +19,4 @@ jobs:
         with:
           context: ./app
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/agriculture-app:latest
+    tags: rashidov2005/farming-procurement-v2:latest
